@@ -3,6 +3,7 @@ package com.google.codelabs.mdc.kotlin.shrine
 import android.os.Build
 import android.os.Bundle
 import android.view.*
+import android.view.animation.AccelerateDecelerateInterpolator
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
@@ -26,6 +27,8 @@ class ProductGridFragment : Fragment() {
 
         (activity as AppCompatActivity).setSupportActionBar(view.app_bar)
 
+        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(activity!!, view.product_grid))
+        view.app_bar.setNavigationOnClickListener(NavigationIconClickListener(activity!!, view.product_grid, AccelerateDecelerateInterpolator()))
         view.recycler_view.setHasFixedSize(true)
 
         val gridLayoutManager = GridLayoutManager(context, 2, RecyclerView.HORIZONTAL, false)
