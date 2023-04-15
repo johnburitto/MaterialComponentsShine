@@ -7,6 +7,18 @@
     tools:context=".ProductGridFragment">
 
     <LinearLayout
+        style="@style/Widget.Shrine.Backdrop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="100dp"
+        android:paddingBottom="100dp">
+
+        <include layout="@layout/shr_backdrop" />
+    </LinearLayout>
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -29,14 +41,14 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/productGridBackgroundColor"
-            android:elevation="6dp"
+            android:elevation="8dp"
+            android:visibility="gone"
             tools:targetApi="lollipop" >
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 </FrameLayout>
